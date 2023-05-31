@@ -1,0 +1,8 @@
+
+dist
+*.d.ts
+/src/assets
+package.json
+.eslintrc.json
+.prettierrc.json
+

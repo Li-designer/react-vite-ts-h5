@@ -1,0 +1,45 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "standard-with-typescript",
+    "react-app",
+    "airbnb",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "no-undef": "off"
+      }
+    }
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": ["./tsconfig.json"]
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "rules": {
+    "react/jsx-filename-extension": "off", // 关闭airbnb对于jsx必须写在jsx文件中的设置
+    "react/prop-types": "off", // 关闭airbnb对于必须添加prop-types的校验
+    "indent": [
+      "warn",
+      2,
+      {
+        "SwitchCase": 1,
+        "flatTernaryExpressions": true
+      }
+    ],
+    "semi": ["error", "never"],
+    "react/jsx-indent": ["warn", 2],
+    "no-duplicate-imports": "error",
+    "react/jsx-indent-props": ["warn", 2]
+  }
+}
