@@ -25,7 +25,6 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
         imports: [
           // 插件预设支持导入的api
           "react",
-          "react-router",
           "react-router-dom"
           // 自定义导入的api
         ],
