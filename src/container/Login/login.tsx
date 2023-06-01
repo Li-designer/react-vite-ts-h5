@@ -1,9 +1,19 @@
 import { Form, Input, Button } from "antd-mobile"
 import s from "./style.module.less"
+import {
+  AuthContext,
+  AuthContextType,
+} from "@/container/AuthProvider/authProvider"
+
+const useAuth = () => useContext(AuthContext)
 
 const Login = () => {
+  const navigate = useNavigate()
+  let auth = useAuth()
+  let { signIn } = auth as AuthContextType
+
   const onFinish = (values: any) => {
-    console.log(values)
+    signIn(values.username, () => navigate("/", { replace: true }))
   }
 
   return (
@@ -18,16 +28,17 @@ const Login = () => {
           className={s.formLogin}
           layout="horizontal"
           mode="card"
+          onFinish={onFinish}
           footer={
             <Button block type="submit" color="primary" size="middle">
               提交
             </Button>
           }
         >
-          <Form.Item label="用户名">
+          <Form.Item name="username" label="用户名">
             <Input placeholder="请输入" />
           </Form.Item>
-          <Form.Item label="密码">
+          <Form.Item name="password" label="密码">
             <Input placeholder="请输入" />
           </Form.Item>
         </Form>

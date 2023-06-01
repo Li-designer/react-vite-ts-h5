@@ -1,5 +1,7 @@
+
 import Home from "@/container/Home/home"
 import Login from "@/container/Login/login"
+import Protected from '@/container/Protected/protected'
 
 const routes = [
   {
@@ -10,6 +12,10 @@ const routes = [
     path: "/login",
     component: Login,
   },
+  {
+    path: "/protected",
+    component: Protected,
+  }
 ]
 
 export default routes
