@@ -15,16 +15,16 @@ const useAuth = () => useContext(AuthContext)
 
 const RequireAuth = ({ children }: { children: JSX.Element }) => {
   let auth = useAuth()
-  let { user } = auth as AuthContextType
+  let { user, token } = auth as AuthContextType
   let location = useLocation()
 
   useEffect(() => {
-    if (!user) {
+    if (!user || !token) {
       Toast.show({
         content: "请先登录~~",
       })
     }
-  }, [!user])
+  }, [!user, !token])
 
   if (!user) {
     return <Navigate to="/login" state={{ from: location }} replace />

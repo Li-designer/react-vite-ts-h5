@@ -13,7 +13,10 @@ const Login = () => {
   let { signIn } = auth as AuthContextType
 
   const onFinish = (values: any) => {
-    signIn(values.username, () => navigate("/", { replace: true }))
+    const Token = "11111111111111122222222222222"
+    localStorage.setItem("user", values.username)
+    localStorage.setItem("TOKEN", Token)
+    signIn(values.username, Token, () => navigate("/", { replace: true }))
   }
 
   return (
