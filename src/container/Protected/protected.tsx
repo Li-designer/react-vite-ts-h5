@@ -1,7 +1,7 @@
 const Protected = () => {
   return (
     <>
-      <div>登录后可见</div>
+      <div>另一个页面</div>
     </>
   )
 }

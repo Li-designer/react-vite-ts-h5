@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { useLocation, Navigate } from "react-router-dom"
+import { Toast } from "antd-mobile"
 import {
   AuthContext,
   AuthContextType,
@@ -17,9 +18,17 @@ const RequireAuth = ({ children }: { children: JSX.Element }) => {
   let { user } = auth as AuthContextType
   let location = useLocation()
 
+  useEffect(() => {
+    if (!user) {
+      Toast.show({
+        content: "请先登录~~",
+      })
+    }
+  }, [!user])
 
-  if (!user) return <Navigate to="/login" state={{ from: location }} replace />
-
+  if (!user) {
+    return <Navigate to="/login" state={{ from: location }} replace />
+  }
   return children
 }
 

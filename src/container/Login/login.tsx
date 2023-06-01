@@ -36,10 +36,10 @@ const Login = () => {
           }
         >
           <Form.Item name="username" label="用户名">
-            <Input placeholder="请输入" />
+            <Input placeholder="随便输入" />
           </Form.Item>
           <Form.Item name="password" label="密码">
-            <Input placeholder="请输入" />
+            <Input placeholder="随便输入" />
           </Form.Item>
         </Form>
         <div className={s.desc}>
