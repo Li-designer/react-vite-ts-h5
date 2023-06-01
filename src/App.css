@@ -25,6 +25,7 @@ div {
 
 #root {
   width:375px;
+  height:100%;
   font-size: 20px;
   background-color: #f4f6fa;
 }
