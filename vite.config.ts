@@ -1,17 +1,17 @@
 import { defineConfig } from "vite"
 import react from "@vitejs/plugin-react"
-import AutoImport from "unplugin-auto-import/vite";
+import AutoImport from "unplugin-auto-import/vite"
 import path, { resolve } from "path"
-import { PluginOption, UserConfigExport, ConfigEnv, loadEnv } from 'vite';
+import { PluginOption, UserConfigExport, ConfigEnv, loadEnv } from "vite"
 
 /** 当前执行node命令时文件夹的地址（工作目录） */
-const root: string = process.cwd();
+const root: string = process.cwd()
 const pathResolve = (dir: string): string => {
-  return resolve(__dirname, ".", dir);
-};
+  return resolve(__dirname, ".", dir)
+}
 // https://vitejs.dev/config/
 export default ({ command, mode }: ConfigEnv): UserConfigExport => {
-  const env = loadEnv(mode, root, "");
+  const env = loadEnv(mode, root, "")
   return {
     base: command !== "serve" ? "/dist" : "/",
     root,
@@ -25,7 +25,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
         imports: [
           // 插件预设支持导入的api
           "react",
-          "react-router-dom"
+          "react-router-dom",
           // 自定义导入的api
         ],
 
@@ -37,15 +37,15 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
           // Default `./.eslintrc-auto-import.json`
           filepath: "./.eslintrc-auto-import.json",
           // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
-          globalsPropValue: true
+          globalsPropValue: true,
         },
 
         // Filepath to generate corresponding .d.ts file.
         // Defaults to './auto-imports.d.ts' when `typescript` is installed locally.
         // Set `false` to disable.
         dts: "./auto-imports.d.ts",
-        resolvers: []
-      })
+        resolvers: [],
+      }),
     ],
     css: {
       modules: {
@@ -60,7 +60,7 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
     },
     server: {
       hmr: {
-        overlay: false
+        overlay: false,
       },
       port: 9527,
       host: "0.0.0.0",
@@ -89,19 +89,19 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
       minify: "terser",
       terserOptions: {
         compress: false,
-        mangle: false
+        mangle: false,
       },
       rollupOptions: {
         input: {
-          index: pathResolve("index.html")
+          index: pathResolve("index.html"),
         },
         // 静态资源分类打包
         output: {
           chunkFileNames: "static/js/[name]-[hash].js",
           entryFileNames: "static/js/[name]-[hash].js",
-          assetFileNames: "static/[ext]/[name]-[hash].[ext]"
-        }
-      }
+          assetFileNames: "static/[ext]/[name]-[hash].[ext]",
+        },
+      },
     },
     resolve: {
       alias: {

@@ -1,10 +1,10 @@
-import { Button } from "react-vant"
+import { Button } from "antd-mobile"
 const Home = () => {
   return (
     <>
-    <Button hairline type="primary">
-      细边框按钮
-    </Button>
+      <Button block color="primary" size="large">
+        Block Button
+      </Button>
     </>
   )
 }

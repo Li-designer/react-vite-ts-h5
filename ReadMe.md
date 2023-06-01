@@ -36,6 +36,6 @@
   }
   ```
 
-## React Vant
+## Ant Design Mobile
 
-- [文档](https://react-vant.3lang.dev/)
+- [文档](https://mobile.ant.design/zh)

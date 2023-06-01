@@ -1,3 +1,1 @@
-
-type ERROR_CODE = { [key: number]: string };
-
+type ERROR_CODE = { [key: number]: string }
