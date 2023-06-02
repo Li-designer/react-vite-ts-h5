@@ -1,5 +1,6 @@
 import { Form, Input, Button } from "antd-mobile"
 import s from "./style.module.less"
+import imgBoy from "./img/boy-party-popper.png"
 import {
   AuthContext,
   AuthContextType,
@@ -22,7 +23,7 @@ const Login = () => {
   return (
     <>
       <div className={s.login}>
-        <img src="/img/boy-party-popper.png" alt="" className={s.image} />
+        <img src={imgBoy} alt="" className={s.image} />
         <div className={s.welcome}>
           <p>Hi,</p>
           <p>👏🏻欢迎登录~</p>

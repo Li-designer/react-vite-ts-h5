@@ -13,7 +13,7 @@ const pathResolve = (dir: string): string => {
 export default ({ command, mode }: ConfigEnv): UserConfigExport => {
   const env = loadEnv(mode, root, "")
   return {
-    base: command !== "serve" ? "/dist" : "/",
+    base: command !== "serve" ? "./" : "/",
     root,
     plugins: [
       react(),
