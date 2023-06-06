@@ -1,10 +1,12 @@
 import { useContext } from "react"
 import { useNavigate, Link, Outlet } from "react-router-dom"
 import { Button } from "antd-mobile"
+import s from "./style.module.less"
 import {
   AuthContext,
   AuthContextType,
 } from "@/container/AuthProvider/authProvider"
+import TabBar from "@/Layout/tabBar/tabBar"
 
 const useAuth = () => useContext(AuthContext)
 
@@ -26,18 +28,11 @@ const AuthStatus = () => {
 
 const Layout = () => {
   return (
-    <div>
+    <div className={s.layOut}>
       <AuthStatus />
-      <ul>
-        <li>
-          <Link to="/">主页</Link>
-        </li>
-        <li>
-          <Link to="/protected">另一个页面</Link>
-        </li>
-      </ul>
       {/* 嵌套路由 */}
       <Outlet />
+      <TabBar></TabBar>
     </div>
   )
 }

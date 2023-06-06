@@ -1,0 +1,12 @@
+.layOut {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.layOut :global .adm-tab-bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+}

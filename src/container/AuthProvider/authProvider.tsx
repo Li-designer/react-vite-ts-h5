@@ -2,7 +2,8 @@ import { ReactNode, createContext, useState } from "react"
 
 export interface AuthContextType {
   user: any // 用户名
-  token: any
+  token: any,
+  
   signIn: (user: string, token: string, callback: VoidFunction) => void
   signOut: (callback: VoidFunction) => void
 }

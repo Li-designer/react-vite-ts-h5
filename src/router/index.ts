@@ -1,8 +1,9 @@
 
 import Home from "@/container/Home/home"
 import Login from "@/container/Login/login"
-import Protected from '@/container/Protected/protected'
-
+import AccountBook from '@/container/AccountBook/accountBook'
+import Graphic from '@/container/Graphic/graphic'
+import Personal from '@/container/Personal/personal'
 const routes = [
   {
     path: "/",
@@ -13,9 +14,17 @@ const routes = [
     component: Login,
   },
   {
-    path: "/protected",
-    component: Protected,
-  }
+    path: "/accountBook",
+    component: AccountBook,
+  },
+  {
+    path: "/graphic",
+    component: Graphic,
+  },
+  {
+    path: "/personal",
+    component: Personal,
+  },
 ]
 
 export default routes
