@@ -5,6 +5,8 @@ import {
   AuthContext,
   AuthContextType,
 } from "@/container/AuthProvider/authProvider"
+import store from "@/store/reducers"
+import { toggleTabBar } from "@/store/actions"
 
 const useAuth = () => useContext(AuthContext)
 
@@ -17,6 +19,7 @@ const Login = () => {
     const Token = "11111111111111122222222222222"
     localStorage.setItem("user", values.username)
     localStorage.setItem("TOKEN", Token)
+    store.dispatch(toggleTabBar("home"))
     signIn(values.username, Token, () => navigate("/", { replace: true }))
   }
 
