@@ -2,7 +2,7 @@
 import Home from "@/container/Home/home"
 import Login from "@/container/Login/login"
 import AccountBook from '@/container/AccountBook/accountBook'
-import Graphic from '@/container/Graphic/graphic'
+// import Graphic from '@/container/Graphic/graphic'
 import Personal from '@/container/Personal/personal'
 const routes = [
   {
@@ -17,10 +17,10 @@ const routes = [
     path: "/accountBook",
     component: AccountBook,
   },
-  {
-    path: "/graphic",
-    component: Graphic,
-  },
+  /*  {
+     path: "/graphic",
+     component: Graphic,
+   }, */
   {
     path: "/personal",
     component: Personal,

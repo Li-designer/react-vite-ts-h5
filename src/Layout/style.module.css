@@ -3,6 +3,10 @@
   width: 100%;
   height: 100%;
 }
+.layOut .headTop :global .adm-list-body-inner {
+  display: flex;
+  justify-content: space-between;
+}
 .layOut :global .adm-tab-bar {
   position: absolute;
   left: 0;

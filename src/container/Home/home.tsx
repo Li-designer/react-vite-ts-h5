@@ -28,12 +28,6 @@ const Home = () => {
   if (res.loading) {
     return <Loading></Loading>
   }
-  return (
-    <>
-      <Button block color="primary" size="large">
-        Block Button
-      </Button>
-    </>
-  )
+  return <>统计</>
 }
 export default Home
