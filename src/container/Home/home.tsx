@@ -1,16 +1,11 @@
-import { Button } from "antd-mobile"
 import { useRequest } from "ahooks"
-import Loading from "@/container/Loading/loading"
+import { useLoading } from "@/context/LoadingContext"
 
 const Home = () => {
   const [data, setData] = useState<null | any>(null)
+  const { showLoading, hideLoading } = useLoading()
 
-  const res = useRequest(async () => {
-    // const res = await api();
-    // if (res) {
-    //   return res;
-    // }
-    // return {};
+  const { loading } = useRequest(async () => {
     /* 异步模拟 */
     return new Promise<string>((resolve: any, reject) => {
       setTimeout(
@@ -25,9 +20,13 @@ const Home = () => {
       )
     })
   })
-  if (res.loading) {
-    return <Loading></Loading>
-  }
+  useEffect(() => {
+    if (loading) {
+      showLoading()
+    } else {
+      hideLoading()
+    }
+  }, [loading])
   return <>统计</>
 }
 export default Home

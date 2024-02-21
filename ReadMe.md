@@ -39,3 +39,7 @@
 ## Ant Design Mobile
 
 - [文档](https://mobile.ant.design/zh)
+
+## 日志
+
+- 2024/02/21 新增全局loading控制
